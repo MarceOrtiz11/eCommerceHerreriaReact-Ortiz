@@ -14,13 +14,13 @@ const NavBar = () => {
 
       <ul className="categories-navbar">
         <Link to="/category/mouse" className="categorie-navbar">
-          Aluminio
+          ALUMINIO
         </Link>
         <Link to="/category/teclado" className="categorie-navbar">
-          Puerta
+          PUERTA
         </Link>
         <Link to="/category/audio" className="categorie-navbar">
-          Baño
+          BAÑO
         </Link>
       </ul>
       <CartWidget />

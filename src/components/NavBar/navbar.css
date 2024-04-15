@@ -28,12 +28,33 @@
   padding: 10px 20px;
   margin: 0 10px;
   border-radius: 5px;
-  text-decoration: none;
-  color: black;
 }
-.categorie-navbar:hover{
-  background-color: rgba(119, 114, 114, 0.609);
-  color: white;
+
+.categorie-navbar {
+  color: rgb(94, 94, 93);
+  text-decoration: none;
+  font-size: 18px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.categorie-navbar::before {
+  margin-left: auto;
+}
+
+.categorie-navbar::after, .categorie-navbar::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #ecab1e;
+  display: block;
+  transition: 0.5s;
+}
+
+.categorie-navbar:hover::after, .categorie-navbar:hover::before {
+  width: 100%;
 }
 
 .cartwidget{
@@ -47,3 +68,4 @@
 .cartwidget:hover{
   cursor: pointer;
 }
+
