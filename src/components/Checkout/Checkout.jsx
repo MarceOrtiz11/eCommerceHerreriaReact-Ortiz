@@ -1,6 +1,10 @@
 import { useState, useContext } from "react"
 import FormularioCheckOut from "./FormularioCheckOut"
 import { CartContext } from "../../context/CartContext";
+import { addDoc, collection } from "firebase/firestore";
+import db from "../../db/db";
+import { Link } from "react-router-dom";
+
 
 const Checkout = () => {
     const [dataForm, setDataForm] = useState({
@@ -8,8 +12,8 @@ const Checkout = () => {
         phone: "",
         email: ""
     });
-
-    const{ cart, totalPrice}= useContext(CartContext)
+    const [idOrder, setIdOrder] = useState(null)
+    const { cart, totalPrice, clearCart } = useContext(CartContext)
 
     const handleChangeInput = (event) => {
         setDataForm({ ...dataForm, [event.target.name]: event.target.value })
@@ -23,18 +27,37 @@ const Checkout = () => {
             products: [...cart],
             total: totalPrice()
         }
-
+        uploadOrder(order);
     };
+
+    const uploadOrder = async (order) => {
+        const ordersRef = collection(db, "orders");
+        const response = await addDoc(ordersRef, order);
+
+        setIdOrder(response.id);
+        clearCart()
+    }
 
     return (
         <div>
+            {idOrder ? (
+            <div>
+                <h2>Gracias por su compra! 🚀 </h2>
+                <p>Numero de seguimiento: </p>
+                {idOrder}
+                <div>
+                <Link to="/">Volver al inicio</Link>
+                </div>
+            </div>
+            ) : (
             <FormularioCheckOut
                 dataForm={dataForm}
                 handleChangeInput={handleChangeInput}
                 handleSubmit={handleSubmit}
             />
+            )}
         </div>
     );
-}
+};
 
 export default Checkout

@@ -63,6 +63,11 @@
   align-items: center;
   margin-right: 20px;
   color: rgb(83, 80, 80);
+  text-decoration: none;
+}
+
+.cartwidget p{
+  font-weight: 800;
 }
 
 .cartwidget:hover{

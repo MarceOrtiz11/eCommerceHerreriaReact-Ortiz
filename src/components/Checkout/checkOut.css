@@ -1,7 +1,7 @@
 .form-container {
     max-width: 400px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 label {
@@ -36,3 +36,4 @@ button:hover {
     background-color: #775905;
     transform: scale(1.05);
 }
+
