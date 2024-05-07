@@ -1,11 +1,17 @@
 import ItemCount from "../ItemCount/ItemCount";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import "./itemDetailContainer.css";
 
 const ItemDetail = ({ product }) => {
 
-  const handleClick = (count) => {
+  const { cart, addToCart } = useContext(CartContext)
+
+  console.log(cart)
+
+  const handleAddToCart = (count) => {
     const productCart = { ...product, quantity: count, total: product.price * count }
-    console.log(productCart);
+    addToCart(productCart)
   }
 
   return (
@@ -14,7 +20,7 @@ const ItemDetail = ({ product }) => {
         <h1 className="title">{product.name}</h1>
         <p className="description">{product.fullDescription}</p>
         <p className="price">Precio: ${product.price}</p>
-        <ItemCount handleClick={handleClick} stock={product.stock} />
+        <ItemCount handleAdToCart={handleAddToCart} stock={product.stock} />
       </div>
       <div className="image-detail">
         <img src={product.image} />
