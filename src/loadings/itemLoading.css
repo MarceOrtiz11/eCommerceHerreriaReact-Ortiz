@@ -1,0 +1,44 @@
+.item-list-loading{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    animation: animationCards 1s ease-in-out infinite;
+}
+
+.image-box-card-loading{
+    width: 100%;
+    height: 380px;
+    background-color: rgb(189, 189, 189);
+    padding: 50px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-card{
+    width: 200px;
+    height: 25px;
+    background-color: rgb(139,139,139);
+    border-radius: 5px;
+}
+
+.info-card .description-card-loading{
+    margin-top: 10px;
+    width: 300px;
+    height: 50px;
+    background-color: rgb(139,139,139);
+    border-radius: 5px;
+}
+
+@keyframes animationCards{
+    0%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 60%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}

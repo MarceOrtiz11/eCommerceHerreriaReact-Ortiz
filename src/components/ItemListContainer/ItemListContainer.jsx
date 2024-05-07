@@ -6,10 +6,13 @@ import "./itemListContainer.css"
 
 const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   const { idCategory } = useParams()
 
   useEffect(() => {
+    setLoading(true)
+
     getProducts
       .then((respuesta) => {
         if(idCategory){
@@ -20,12 +23,15 @@ const ItemListContainer = ({ saludo }) => {
         }
       })
       .catch((error) => console.log(error))
-      .finally(() => console.log("Finalizo la promesa"));
+      .finally(() => setLoading(false));
   }, [idCategory]);
 
   return (
     <div className="item-list-container">
       <h2 className="title-items">{saludo}</h2>
+      {
+        loading ? <div>Cargando productos...</div> : <ItemList products={products} />
+      }
       <ItemList products={products} />
     </div>
   );

@@ -1,22 +1,35 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
+import "./cart.css"
 
 const Cart = () => {
     
-    const { cart, clearCart } = useContext(CartContext)
+    const { cart, clearCart, deleteProductById, totalPrice } = useContext(CartContext)
+
+    if (cart.length === 0) {
+        return <div>Carrito de Compras Vacio</div>
+    }
 
     return (
-        <div>
-            {
-                cart.map((product) => (
-                    <div key={product.id} >
-                        <p>{product.name}</p>
-                        <img src={product.image} style={{width:"100px", height:"100px"}}  />
+        <div className="cart">
+            <h2>Tu Carrito</h2>
+            <div className="products-cart">
+                {cart.map((product) => (
+                    <div key={product.id} className="product-cart">
+                        <img className="image-product-cart" src={product.image} />
+                        <p className="info-product-cart">{product.name}</p>
+                        <p className="info-product-cart">Cantidad: {product.quantity}</p>
+                        <p className="info-product-cart">Precio Unidad: {product.price}</p>
+                        <p className="info-product-cart">Total:{product.quantity * product.price}</p>
+                    
+                        <button onClick={() => deleteProductById(product.id)} >Eliminar Producto</button>
                     </div>
-                ))
-            }
-
-            <button onClick={clearCart}>Vaciar Carrito</button>
+                ))}
+            </div>
+            <div className="controls-cart">
+                <h2>Total Compra: {totalPrice()}</h2>
+                <button className="button-cart" onClick={clearCart}>Vaciar Carrito</button>
+            </div>
         </div>
     )
 }

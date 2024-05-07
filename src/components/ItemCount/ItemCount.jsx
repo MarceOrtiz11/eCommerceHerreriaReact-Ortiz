@@ -1,7 +1,7 @@
 import "./itemCount.css"
 import { useState } from "react";
 
-const ItemCount = ({ handleAdToCart, stock }) => {
+const ItemCount = ({ handleAddToCart, stock }) => {
     const [count, setCount] = useState(1);
 
     const handleAdd = () => {
@@ -24,7 +24,7 @@ const ItemCount = ({ handleAdToCart, stock }) => {
                 <button onClick={handleAdd}>+</button>
             </div>
             <div>
-                <button onClick={() => handleAdToCart(count)}>Agregar al Carrito</button>
+                <button onClick={() => handleAddToCart(count)}>Agregar al Carrito</button>
             </div>
         </div>
     );
