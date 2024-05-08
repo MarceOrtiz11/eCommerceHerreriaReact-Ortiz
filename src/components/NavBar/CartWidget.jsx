@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import {CartContext} from "../../context/CartContext"
-import { PiShoppingCartSimple } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import { PiShoppingCartSimple } from "react-icons/pi";
+import {CartContext} from "../../context/CartContext"
 
 const CartWidget = () => {
 

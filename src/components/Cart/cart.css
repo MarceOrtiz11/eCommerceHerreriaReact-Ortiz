@@ -46,3 +46,10 @@
     margin-left: 20px;
     margin-right: 20px;
 }
+
+.empty-cart{
+    margin-top: 80px;
+    text-align: center;
+    font-weight: 800;
+    font-size: x-large;
+}

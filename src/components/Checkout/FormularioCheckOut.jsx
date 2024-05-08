@@ -15,7 +15,7 @@ const FormularioCheckOut = ({ dataForm, handleChangeInput, handleSubmit }) => {
             />
             <label htmlFor="phone">Telefono:</label>
             <input
-                type="text"
+                type="number"
                 id="phone"
                 name="phone"
                 value={dataForm.phone}
