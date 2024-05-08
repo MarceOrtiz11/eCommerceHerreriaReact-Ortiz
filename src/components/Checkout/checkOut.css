@@ -37,3 +37,39 @@ button:hover {
     transform: scale(1.05);
 }
 
+.div-checkout{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.link-checkout {
+    background-color: #c5ab19;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+,.link-checkout {
+    background-color: #775905;
+    transform: scale(1.05);
+}
+
+.track-number{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.track-number p{
+    margin-bottom: 10px;
+}
+
+.thank-you{
+    font-weight: 800;
+    margin-bottom: 40px;
+}

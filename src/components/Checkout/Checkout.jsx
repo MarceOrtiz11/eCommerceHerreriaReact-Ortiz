@@ -39,14 +39,18 @@ const Checkout = () => {
     }
 
     return (
-        <div>
+        <div className="div-checkout">
             {idOrder ? (
             <div>
-                <h2>Gracias por su compra! 🚀 </h2>
-                <p>Numero de seguimiento: </p>
+                <h2 className="thank-you">Gracias por su compra! 🚀 </h2>
+                <div className="track-number">
+                <p>Numero de seguimiento: 👇 </p>
                 {idOrder}
+                </div>
                 <div>
-                <Link to="/">Volver al inicio</Link>
+                <Link className="link-checkout" to="/">
+                    Volver al inicio
+                </Link>
                 </div>
             </div>
             ) : (
