@@ -2,16 +2,26 @@
   padding: 50px 0;
 }
 .title-items{
-  padding: 0 20px;
+  margin-bottom: 10px;
+  padding: 0 auto;
+  text-align: center;
+  color: rgb(80, 79, 79);
+  font-size: xx-large;
+  font-weight: 600;
+  font-variant: small-caps;
 }
 .item-list{
   display: flex;
-  justify-content:flex-start;
+  justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 .card{
-  width: 21%;
-  margin: 3% 2%;
+  width: 18%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
 }

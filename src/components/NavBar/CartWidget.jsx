@@ -4,7 +4,6 @@ import { PiShoppingCartSimple } from "react-icons/pi";
 import {CartContext} from "../../context/CartContext"
 
 const CartWidget = () => {
-
   const { totalQuantity } = useContext(CartContext)
   const quantity = totalQuantity()
 
@@ -15,4 +14,5 @@ const CartWidget = () => {
     </Link>
   );
 };
+
 export default CartWidget;

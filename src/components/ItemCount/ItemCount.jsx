@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const ItemCount = ({ handleAddToCart, stock }) => {
     const [count, setCount] = useState(1);
-
     const handleAdd = () => {
         if (count < stock) {
             setCount(count + 1);

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Item = ({ product }) => {
   const [expandir, setExpandir] = useState(false);
-
   const handleMouseOver = () => {
     setExpandir(true)
   };

@@ -1,12 +1,8 @@
 import { createContext, useState } from "react"
 
 const CartContext = createContext()
-
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    
-    
-
     const addToCart = (newProduct) => {
         const condicion = isInCart(newProduct.id)
         if (condicion) {
@@ -17,7 +13,6 @@ const CartProvider = ({ children }) => {
                     return productCart
                 }
             })
-
             setCart(productsMod)
         } else {
             setCart([...cart, newProduct])
@@ -30,7 +25,6 @@ const CartProvider = ({ children }) => {
     }
 
     const totalQuantity = () => cart.reduce((total, product) => total + product.quantity, 0)
-    
     const clearCart = () => {
         setCart([])
     }

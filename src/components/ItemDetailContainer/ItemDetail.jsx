@@ -7,7 +7,6 @@ import "./itemDetailContainer.css";
 const ItemDetail = ({ product }) => {
   const { cart, addToCart } = useContext(CartContext)
   const [clickAdd, setClickAdd] = useState(false)
-
   const handleAddToCart = (count) => {
     const productCart = { ...product, quantity: count, total: product.price * count }
     addToCart(productCart)

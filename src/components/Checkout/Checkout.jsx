@@ -15,13 +15,11 @@ const Checkout = () => {
     });
     const [idOrder, setIdOrder] = useState(null)
     const { cart, totalPrice, clearCart } = useContext(CartContext)
-
     const handleChangeInput = (event) => {
         setDataForm({ ...dataForm, [event.target.name]: event.target.value })
     };
 
     const handleSubmit = async(event) => {
-
         event.preventDefault();
         const order = {
             user: { ...dataForm },
@@ -50,13 +48,11 @@ const Checkout = () => {
             <div>
                 <h2 className="thank-you">Gracias por su compra! 🚀 </h2>
                 <div className="track-number">
-                <p>Numero de seguimiento: 👇 </p>
-                {idOrder}
+                    <p>Numero de seguimiento: 👇 </p>
+                    {idOrder}
                 </div>
                 <div>
-                <Link className="link-checkout" to="/">
-                    Volver al inicio
-                </Link>
+                    <Link className="link-checkout" to="/">Volver al inicio</Link>
                 </div>
             </div>
             ) : (
